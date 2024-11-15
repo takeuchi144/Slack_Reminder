@@ -1,0 +1,34 @@
+version = 0.1
+
+[default.global.parameters]
+stack_name = "slackapp"
+region = "us-west-1"
+
+[default.build.parameters]
+parallel = true
+
+[default.validate.parameters]
+lint = true
+
+[default.deploy.parameters]
+capabilities = "CAPABILITY_IAM"
+confirm_changeset = true
+resolve_s3 = true
+resolve_image_repos = true
+
+[default.package.parameters]
+resolve_s3 = true
+
+[default.sync.parameters]
+watch = false
+template_file = "c:\\Users\\ha-takeuchi\\slackapp\\slack_app_aws\\template.yaml"
+s3_bucket = "haruya-takeuchi-slackapp"
+image_repository = "248478119516.dkr.ecr.us-west-1.amazonaws.com/slackapp"
+dependency_layer = false
+code = true
+
+[default.local_start_api.parameters]
+warm_containers = "EAGER"
+
+[default.local_start_lambda.parameters]
+warm_containers = "EAGER"
